@@ -17,14 +17,6 @@ public class Langchain4jTest {
 
     @Test
     public void testGPT() {
-/*        OpenAiChatModel model = OpenAiChatModel.builder()
-                .baseUrl("https://aiproxy.hzh.sealos.run")
-                .apiKey("sk-wrPsPqcp9Jh2X4ZYdFRw2c7bK9Ygt8iLSkw9pVl98yikGmCk")
-                .modelName("gpt-4o-mini")
-                .build();
-
-        String answer = model.chat("Say 'Hello World'");
-        System.out.println(answer); // Hello World*/
 
         OpenAiChatModel model = OpenAiChatModel.builder()
                 .baseUrl("http://langchain4j.dev/demo/openai/v1")
@@ -39,6 +31,12 @@ public class Langchain4jTest {
     @Test
     public void testSpringBoot() {
         String answer = model.chat("我是誰？");
+        System.out.println(answer);
+    }
+
+    @Test
+    public void testDeepSeekAPI() {
+        String answer = model.chat("你是谁？");
         System.out.println(answer);
     }
 }
