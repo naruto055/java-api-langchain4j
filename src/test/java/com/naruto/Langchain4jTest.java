@@ -41,6 +41,10 @@ public class Langchain4jTest {
         System.out.println(answer);
     }
 
+    /**
+     * 调用openai大模型
+     * 在配置文件中可以修改请求的base-url，目前是通过阿里百炼调用deepseekv3模型
+     */
     @Test
     public void testSpringBoot() {
         String answer = model.chat("我是誰？");
