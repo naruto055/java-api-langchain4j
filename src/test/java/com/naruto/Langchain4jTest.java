@@ -1,5 +1,6 @@
 package com.naruto;
 
+import dev.langchain4j.model.ollama.OllamaChatModel;
 import dev.langchain4j.model.openai.OpenAiChatModel;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,9 @@ public class Langchain4jTest {
 
     @Autowired
     private OpenAiChatModel model;
+
+    @Autowired
+    private OllamaChatModel ollamaChatModel;
 
     @Test
     public void testGPT() {
@@ -37,6 +41,15 @@ public class Langchain4jTest {
     @Test
     public void testDeepSeekAPI() {
         String answer = model.chat("你是谁？");
+        System.out.println(answer);
+    }
+
+    /**
+     * 调用ollma本地大模型
+     */
+    @Test
+    public void testOllama() {
+        String answer = ollamaChatModel.chat("你是谁");
         System.out.println(answer);
     }
 }
