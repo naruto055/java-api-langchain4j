@@ -20,7 +20,7 @@ import dev.langchain4j.service.spring.AiServiceWiringMode;
 public interface SeparateChatAssistant {
 
     @SystemMessage(fromResource = "systemMessage.txt")
-        //@SystemMessage("你是我的好朋友，请用东北话回答问题")
+    //@SystemMessage("你是我的好朋友，请用东北话回答问题")
     String chat(@MemoryId int memoryId, @UserMessage String userMessage);
 
     @UserMessage("你是我的好朋友，请用东北话回答问题，并且添加一些表情符号。{{userMessage}}")
