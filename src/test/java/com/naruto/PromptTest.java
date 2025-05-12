@@ -42,4 +42,13 @@ public class PromptTest {
         String answer3 = memoryChatAssistant.chat("你知道我是谁吗");
         System.out.println(answer3);
     }
+
+    @Test
+    public void testPrompt4() {
+        String answer = separateChatAssistant.chat2(10, "我是张三");
+        System.out.println(answer);
+
+        String answer2 = separateChatAssistant.chat2(10, "我是谁");
+        System.out.println(answer2);
+    }
 }
