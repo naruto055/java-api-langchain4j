@@ -51,4 +51,10 @@ public class PromptTest {
         String answer2 = separateChatAssistant.chat2(10, "我是谁");
         System.out.println(answer2);
     }
+
+    @Test
+    public void testUserInfo() {
+        String answer = separateChatAssistant.chat3(10, "我是谁，我多大了", "张三", 18);
+        System.out.println(answer);
+    }
 }
