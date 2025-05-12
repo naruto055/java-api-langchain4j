@@ -1,5 +1,6 @@
 package com.naruto;
 
+import com.naruto.assistant.MemoryChatAssistant;
 import com.naruto.assistant.SeparateChatAssistant;
 import jakarta.annotation.Resource;
 import org.junit.jupiter.api.Test;
@@ -25,5 +26,20 @@ public class PromptTest {
     public void testPrompt2() {
         String answer = separateChatAssistant.chat(4, "今天几号");
         System.out.println(answer);
+    }
+
+    @Resource
+    private MemoryChatAssistant memoryChatAssistant;
+
+    @Test
+    public void testPrompt3() {
+        String answer = memoryChatAssistant.chat("我是张三");
+        System.out.println(answer);
+
+        String answer2 = memoryChatAssistant.chat("今天几号");
+        System.out.println(answer2);
+
+        String answer3 = memoryChatAssistant.chat("你知道我是谁吗");
+        System.out.println(answer3);
     }
 }
